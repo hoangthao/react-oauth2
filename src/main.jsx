@@ -10,7 +10,17 @@ const theme = createTheme({
   primaryColor: 'yellow'
 });
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+      retry: 1,
+      staleTime: 3 * 1000
+    }
+  }
+})
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <MantineProvider theme={theme}>

@@ -3,6 +3,7 @@ import axios from "axios";
 
 const Home = () => {
 
+    /*
     useEffect(() => {
         const fetchHome = async () => {
             const resp = await axios.get('http://localhost:8080')
@@ -28,6 +29,7 @@ const Home = () => {
         fetchProducts1()
         fetchProducts2()
     }, [])
+    */
 
     return ( <>Hello home</> );
 }

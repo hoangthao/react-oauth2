@@ -6,6 +6,8 @@ import Login from './pages/Login'
 import Page404 from './pages/Page404'
 import ProtectedRoute from './components/ProtectedRoute'
 import { AuthProvider } from './hooks/useAuth'
+import ProductsPage from './pages/ProductsPage'
+import ProfilePage from './pages/ProfilePage'
 
 const App = () => {
 
@@ -14,8 +16,10 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout />}>
-            <Route index element={<ProtectedRoute><Home /></ProtectedRoute>}/>
+            <Route index element={<Home />}/>
             <Route path='/login' element={<Login />}/>
+            <Route path='/profile' element={<ProtectedRoute><ProfilePage /></ProtectedRoute>}/>
+            <Route path='/products' element={<ProductsPage />}/>
             <Route path='*' element={<Page404 />}/>
           </Route>
         </Routes>

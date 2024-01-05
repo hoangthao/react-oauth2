@@ -9,6 +9,8 @@ const Layout = () => {
     
     <nav>
         <Link to={"/"}>Home</Link> &nbsp;|&nbsp;
+        <Link to={"/products"}>Products</Link> &nbsp;|&nbsp;
+        <Link to={"/profile"}>Profile</Link> &nbsp;|&nbsp;
         {
             !authed?.isAuthed ? <Link to={"/login"}>Login</Link> :
             (
