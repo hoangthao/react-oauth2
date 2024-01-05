@@ -15,13 +15,15 @@ const logoutSSO = async () => {
 export const AuthProvider = ({children}) => {
     const loggedIn = JSON.parse(sessionStorage.getItem('loggedIn'))
     const [authed, setAuthed] = useState(loggedIn)
-    const [email, setEmail] = useState('')
     const login = async (code, next) => {
         const rs = await gitlabAuth(code)
         if (rs.isAuth) {
-            setAuthed(true)
-            setEmail(rs.email)
-            sessionStorage.setItem('loggedIn', true)
+            const data = {
+                isAuthed: true,
+                email: rs.email
+            }
+            setAuthed(data)
+            sessionStorage.setItem('loggedIn', JSON.stringify(data))
             next()
         }
     }
@@ -29,14 +31,16 @@ export const AuthProvider = ({children}) => {
         const response = await logoutSSO();
         console.log(response)
         if (response) {
-            setAuthed(false)
-            setEmail('')
-            sessionStorage.setItem('loggedIn', false)
+            const data = {
+                isAuthed: false
+            }
+            setAuthed(data)
+            sessionStorage.setItem('loggedIn', JSON.stringify(data))
         }
     }
     return (
         <AuthContext.Provider value={{
-            authed, setAuthed, login, logout, email
+            authed, setAuthed, login, logout
         }}>
             {children}
         </AuthContext.Provider>

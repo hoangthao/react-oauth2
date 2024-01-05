@@ -3,17 +3,17 @@ import { useAuth } from "../hooks/useAuth";
 
 const Layout = () => {
 
-    const { authed, logout, email } = useAuth()
+    const { authed, logout } = useAuth()
 
     return ( <>
     
     <nav>
         <Link to={"/"}>Home</Link> &nbsp;|&nbsp;
         {
-            !authed ? <Link to={"/login"}>Login</Link> :
+            !authed?.isAuthed ? <Link to={"/login"}>Login</Link> :
             (
             <>
-                <span>Welcome {email}! </span>
+                <span>Welcome {authed.email}! </span>
                 <Link to={"#"} onClick={logout}>Logout</Link>
             </>
             )
