@@ -8,6 +8,9 @@ import ProtectedRoute from './components/ProtectedRoute'
 import { AuthProvider } from './hooks/useAuth'
 import ProductsPage from './pages/ProductsPage'
 import ProfilePage from './pages/ProfilePage'
+import ProductsInfinitePage from './pages/ProductsInfinitePage'
+import ProductsSearchPage from './pages/ProductsSearchPage'
+import ProductsFilteringPage from './pages/ProductsFilteringPage'
 
 const App = () => {
 
@@ -18,8 +21,11 @@ const App = () => {
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />}/>
             <Route path='/login' element={<Login />}/>
+            <Route path='/products-1' element={<ProductsPage />}/>
+            <Route path='/products-2' element={<ProductsInfinitePage />}/>
+            <Route path='/products-3' element={<ProductsSearchPage />}/>
+            <Route path='/products-4' element={<ProductsFilteringPage />}/>
             <Route path='/profile' element={<ProtectedRoute><ProfilePage /></ProtectedRoute>}/>
-            <Route path='/products' element={<ProductsPage />}/>
             <Route path='*' element={<Page404 />}/>
           </Route>
         </Routes>

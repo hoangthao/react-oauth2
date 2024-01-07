@@ -1,17 +1,11 @@
 import ProductFilter from "../components/ProductFilter";
 import ProductList from "../components/ProductList";
-import httpClient, { config } from "../api/HttpClient"
+import httpClient from "../api/HttpClient"
 import { useQuery } from "react-query"
 import { useState } from 'react'
 import { Pagination } from '@mantine/core';
 import dayjs from "dayjs";
 import { find } from 'lodash'
-
-const getProducts = async () => {
-    const { data, status } = await httpClient.get('/products')
-    console.log('--status', status)
-    return data
-}
 
 const getProductsWithPaging = async (page, conds) => {
     console.log('conds passed', conds)
