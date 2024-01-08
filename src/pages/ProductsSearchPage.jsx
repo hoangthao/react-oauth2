@@ -61,7 +61,7 @@ const ProductsSearchPage = () => {
     const [term, setTerms] = useState('')
    
     const { data, error, isLoading, isError } = useQuery({
-        queryKey: ['products', page, term],
+        queryKey: ['products-search', page, term],
         queryFn: () => getProducts(page, term)
     })
 

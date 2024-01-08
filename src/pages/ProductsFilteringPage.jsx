@@ -46,7 +46,7 @@ const ProductList = ({products}) => {
   )
 }
 
-const ComboFilter = ({initalQuery, handleQuery}) => {
+export const ComboFilter = ({initalQuery, handleQuery}) => {
   const [search, setSearch] = useState('');
   const [selections, setSelections] = useState(initalQuery);
   const [error, setError] = useState({})
@@ -98,9 +98,7 @@ const ComboFilter = ({initalQuery, handleQuery}) => {
       setError({})
       if (find(selections, i => i.startsWith('from')) === undefined) {
         const now = dayjs().format('YYYY-MM-DD')
-        setSelections((current) => [...current, `from=${now}T00:00:00`], () => {
-          handleQuery(selections)
-        })
+        setSelections((current) => [...current, `from=${now}T00:00:00`])
       } else {
         handleQuery(selections)
       }
@@ -153,7 +151,7 @@ const ProductsFilteringPage = () => {
     const [terms, setTerms] = useState([`from=${now}T00:00:00`])
    
     const { data, error, isLoading, isError } = useQuery({
-        queryKey: ['products', page, terms],
+        queryKey: ['products-filtering', page, terms],
         queryFn: () => getProducts(page, terms)
     })
 

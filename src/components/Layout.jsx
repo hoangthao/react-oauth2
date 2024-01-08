@@ -13,6 +13,7 @@ const Layout = () => {
         <Link to={"/products-2"}>Products Infinite</Link> &nbsp;|&nbsp;
         <Link to={"/products-3"}>Products Search</Link> &nbsp;|&nbsp;
         <Link to={"/products-4"}>Products Filter</Link> &nbsp;|&nbsp;
+        <Link to={"/products-5"}>Products InfiniteFilter</Link> &nbsp;|&nbsp;
         <Link to={"/profile"}>Profile</Link> &nbsp;|&nbsp;
         {
             !authed?.isAuthed ? <Link to={"/login"}>Login</Link> :

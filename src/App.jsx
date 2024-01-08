@@ -11,6 +11,7 @@ import ProfilePage from './pages/ProfilePage'
 import ProductsInfinitePage from './pages/ProductsInfinitePage'
 import ProductsSearchPage from './pages/ProductsSearchPage'
 import ProductsFilteringPage from './pages/ProductsFilteringPage'
+import ProductsInfiniteFilterPage from './pages/ProductsInfiniteFilterPage'
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
             <Route path='/products-2' element={<ProductsInfinitePage />}/>
             <Route path='/products-3' element={<ProductsSearchPage />}/>
             <Route path='/products-4' element={<ProductsFilteringPage />}/>
+            <Route path='/products-5' element={<ProductsInfiniteFilterPage />}/>
             <Route path='/profile' element={<ProtectedRoute><ProfilePage /></ProtectedRoute>}/>
             <Route path='*' element={<Page404 />}/>
           </Route>
