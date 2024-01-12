@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mantine/core": "^7.3.2",
-    "@mantine/dates": "^7.3.2",
-    "@mantine/form": "^7.3.2",
-    "@mantine/hooks": "^7.3.2",
+    "@mantine/core": "^7.4.1",
+    "@mantine/dates": "^7.4.1",
+    "@mantine/form": "^7.4.1",
+    "@mantine/hooks": "^7.4.1",
+    "@mantine/modals": "^7.4.1",
+    "@mantine/notifications": "^7.4.1",
     "@tabler/icons-react": "^2.45.0",
     "axios": "^1.6.3",
     "dayjs": "^1.11.10",
@@ -31,7 +33,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "postcss": "^8.4.32",
+    "postcss": "^8.4.33",
     "postcss-preset-mantine": "^1.12.3",
     "postcss-simple-vars": "^7.0.1",
     "vite": "^5.0.8"

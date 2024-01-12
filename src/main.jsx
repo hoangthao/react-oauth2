@@ -4,6 +4,7 @@ import { createTheme, MantineProvider } from '@mantine/core'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import App from './App.jsx'
 import '@mantine/core/styles.css';
+import { ModalsProvider } from '@mantine/modals'
 
 const theme = createTheme({
   /** Put your mantine theme override here */
@@ -24,8 +25,10 @@ const queryClient = new QueryClient({
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <MantineProvider theme={theme}>
+    <ModalsProvider>
       <QueryClientProvider client={queryClient}>
         <App />
       </QueryClientProvider>
+      </ModalsProvider>
     </MantineProvider>,
 )

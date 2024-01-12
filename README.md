@@ -7,7 +7,7 @@ yarn
 yarn dev
 yarn add axios react-router-dom react-query
 yarn add dayjs lodash
-yarn add @mantine/core @mantine/hooks @mantine/form @mantine/dates @tabler/icons-react
+yarn add @mantine/core @mantine/hooks @mantine/form @mantine/dates @tabler/icons-react @mantine/modals @mantine/notifications @mantinex/dev-icons
 yarn add --dev postcss postcss-preset-mantine postcss-simple-vars
 ```
 
