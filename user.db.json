@@ -1,0 +1,39 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "first_name": "Siffre",
+        "last_name": "Timmes",
+        "email": "stimmes0@nasa.gov",
+        "gender": "Male"
+      },
+      {
+        "id": 2,
+        "first_name": "Fonzie",
+        "last_name": "Coggen",
+        "email": "fcoggen1@weather.com",
+        "gender": "Female"
+      },
+      {
+        "id": 3,
+        "first_name": "Shell",
+        "last_name": "Kos",
+        "email": "skos2@prweb.com",
+        "gender": "Female"
+      },
+      {
+        "id": 4,
+        "first_name": "Matthiew",
+        "last_name": "Rasell",
+        "email": "mrasell3@oaic.gov.au",
+        "gender": "Female"
+      },
+      {
+        "id": 5,
+        "first_name": "Phillipe",
+        "last_name": "Sedgwick",
+        "email": "psedgwick4@sciencedirect.com",
+        "gender": "Female"
+      }
+    ]
+  }

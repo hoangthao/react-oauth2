@@ -1,5 +1,5 @@
 import { useState } from "react"
-import httpClient from "../api/HttpClient"
+import httpClient from "../../api/HttpClient"
 import { useQuery } from "react-query"
 import { Table, Pagination, TextInput, Stack, Button, Combobox, Pill, PillsInput, 
   useCombobox } from '@mantine/core'

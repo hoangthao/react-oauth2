@@ -1,11 +1,13 @@
 import { Link, Outlet } from "react-router-dom";
+import { AppShell, Burger } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import { useAuth } from "../hooks/useAuth";
 
 const Layout = () => {
 
     const { authed, logout } = useAuth()
-
-    return ( <>
+    const [opened, { toggle }] = useDisclosure();
+    const tmp = () => ( <>
     
     <nav>
         <Link to={"/"}>Home</Link> &nbsp;|&nbsp;
@@ -32,6 +34,31 @@ const Layout = () => {
     </div>
 
     </> );
+
+    return (
+        <AppShell
+      header={{ height: 60 }}
+      navbar={{
+        width: 300,
+        breakpoint: 'sm',
+        collapsed: { mobile: !opened },
+      }}
+      padding="md"
+    >
+      <AppShell.Header>
+        <Burger
+          opened={opened}
+          onClick={toggle}
+          hiddenFrom="sm"
+          size="sm"
+        />
+        <div>Logo &nbsp;|&nbsp; <Link to={"/toeic"}>Toeic</Link></div>
+       
+      </AppShell.Header>
+      <Outlet/>
+      
+    </AppShell>
+    )
 }
  
 export default Layout;

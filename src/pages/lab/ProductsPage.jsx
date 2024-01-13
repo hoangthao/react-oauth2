@@ -1,6 +1,6 @@
-import ProductFilter from "../components/ProductFilter";
-import ProductList from "../components/ProductList";
-import httpClient from "../api/HttpClient"
+import ProductFilter from "./components/ProductFilter";
+import ProductList from "./components/ProductList";
+import httpClient from "../../api/HttpClient"
 import { useQuery } from "react-query"
 import { useState } from 'react'
 import { Pagination } from '@mantine/core';

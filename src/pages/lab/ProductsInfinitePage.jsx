@@ -1,5 +1,5 @@
 import { useState } from "react"
-import httpClient from "../api/HttpClient"
+import httpClient from "../../api/HttpClient"
 import { useInfiniteQuery } from "react-query"
 
 const getProducts = async ({ pageParam = 1 }) => {
