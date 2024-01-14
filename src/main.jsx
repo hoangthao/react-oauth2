@@ -8,7 +8,7 @@ import { ModalsProvider } from '@mantine/modals'
 
 const theme = createTheme({
   /** Put your mantine theme override here */
-  primaryColor: 'yellow'
+  primaryColor: 'grape'
 });
 
 const queryClient = new QueryClient({

@@ -52,7 +52,7 @@ const Layout = () => {
           hiddenFrom="sm"
           size="sm"
         />
-        <div>Logo &nbsp;|&nbsp; <Link to={"/toeic"}>Toeic</Link></div>
+        <div>Logo &nbsp;|&nbsp; <Link to={"/english"}>English</Link></div>
        
       </AppShell.Header>
       <Outlet/>

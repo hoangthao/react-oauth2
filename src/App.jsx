@@ -11,9 +11,12 @@ import ProductsInfinitePage from './pages/lab/ProductsInfinitePage'
 import ProductsSearchPage from './pages/lab/ProductsSearchPage'
 import ProductsFilteringPage from './pages/lab/ProductsFilteringPage'
 import ProductsInfiniteFilterPage from './pages/lab/ProductsInfiniteFilterPage'
-import ToeicPage from './pages/toeic/ToeicPage'
-import ToeicListPage from './pages/toeic/ToeicListPage'
-import ToeicLayout from './pages/toeic/ToeicLayout'
+import EnglishPage from './pages/toeic/EnglishPage'
+import ToeicBookPage from './pages/toeic/ToeicBookPage'
+import EnglishLayout from './pages/toeic/EnglishLayout'
+import ToeicUnitPage from './pages/toeic/ToeicUnitPage'
+import ToeicQuestionPage from './pages/toeic/ToeicQuestionPage'
+import ToeicPartPage from './pages/toeic/ToeicPartPage'
 
 const App = () => {
 
@@ -25,9 +28,18 @@ const App = () => {
             <Route index element={<Home />}/>
             <Route path='/login' element={<Login />}/>
             <Route path='/profile' element={<ProtectedRoute><ProfilePage /></ProtectedRoute>}/>
-            <Route path='/toeic' element={<ToeicLayout/>}>
-              <Route index element={<ToeicPage/>} />
-              <Route path='page-1' element={<ToeicListPage />}/>
+            <Route path='/english' element={<EnglishLayout />}>
+              <Route index element={<EnglishPage/>} />
+              <Route path='toeic'>
+                <Route index  element={<ToeicBookPage />} />
+                <Route path=':bookId'>
+                  <Route index element={<ToeicUnitPage />} />
+                  <Route path=':unitId'>
+                    <Route index element={<ToeicPartPage />} />
+                    <Route path=':partId' element={<ToeicQuestionPage />}/>
+                  </Route>
+                </Route>
+              </Route>
             </Route>
             <Route path='/lab'>
               <Route path='products-1' element={<ProductsPage />}/>
