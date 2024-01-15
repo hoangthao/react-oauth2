@@ -17,6 +17,7 @@ import EnglishLayout from './pages/toeic/EnglishLayout'
 import ToeicUnitPage from './pages/toeic/ToeicUnitPage'
 import ToeicQuestionPage from './pages/toeic/ToeicQuestionPage'
 import ToeicPartPage from './pages/toeic/ToeicPartPage'
+import ToeicQuestionEditPage from './pages/toeic/ToeicQuestionEditPage'
 
 const App = () => {
 
@@ -36,7 +37,11 @@ const App = () => {
                   <Route index element={<ToeicUnitPage />} />
                   <Route path=':unitId'>
                     <Route index element={<ToeicPartPage />} />
-                    <Route path=':partId' element={<ToeicQuestionPage />}/>
+                    <Route path=':partId'>
+                      <Route index element={<ToeicQuestionPage />} />
+                      <Route path='new' element={<ToeicQuestionEditPage />}/>
+                      <Route path=':questionId' element={<ToeicQuestionEditPage />}/>
+                    </Route>
                   </Route>
                 </Route>
               </Route>

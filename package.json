@@ -12,6 +12,7 @@
     "toeic": "json-server --watch toeic.db.json"
   },
   "dependencies": {
+    "@hello-pangea/dnd": "^16.5.0",
     "@mantine/core": "^7.4.1",
     "@mantine/dates": "^7.4.1",
     "@mantine/form": "^7.4.1",

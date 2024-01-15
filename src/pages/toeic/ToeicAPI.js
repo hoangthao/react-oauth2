@@ -83,3 +83,31 @@ export const deletePart = async (id) => {
     });
     return response.json();
 }
+
+export const createQuestion = async (data) => {
+    const response = await fetch(`${API_URL}/questions`, {
+        method: 'POST',
+        body: JSON.stringify(data),
+    });
+    return response.json();
+}
+
+export const updateQuestion = async (data) => {
+    const response = await fetch(`${API_URL}/questions/${data.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(data),
+    });
+    return response.json();
+}
+
+export const fetchQuestionByPartId = async (id) => {
+    const response = await fetch(`${API_URL}/questions?partId=${id}`)
+    return response.json();
+}
+
+export const deleteQuestion = async (id) => {
+    const response = await fetch(`${API_URL}/questions/${id}`, {
+        method: 'DELETE',
+    });
+    return response.json();
+}
