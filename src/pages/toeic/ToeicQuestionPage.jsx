@@ -17,7 +17,7 @@ const ToeicQuestionPage = () => {
         (id) => deleteQuestion(id),
         {
             onSuccess: (resp) => {
-                console.log(resp)
+                // console.log(resp)
                 queryClient.invalidateQueries(['questions', partId])
             }
         }
@@ -41,7 +41,7 @@ const ToeicQuestionPage = () => {
                     <ActionIcon onClick={() => mutateDelete.mutate(element.id)} color='lime'>
                         <IconTrash />
                     </ActionIcon>
-                    <ActionIcon onClick={() => console.log('edit')}>
+                    <ActionIcon onClick={() => navigate(element.id)}>
                         <IconPencil />
                     </ActionIcon>
             </Group>

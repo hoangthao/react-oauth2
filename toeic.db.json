@@ -1,5 +1,40 @@
 {
-  "questions": [],
+  "questions": [
+    {
+      "id": "ce2ba52d-0ad4-4b88-af44-e28215c82b07",
+      "title": "101. The building contract was ___ awarded to Zhong Builders of Manchester.",
+      "note": "-",
+      "partId": "8c8d557a-47bf-4a4f-92d8-5c70a2ba56e1",
+      "answers": [
+        {
+          "id": "1705296852771",
+          "correct": false,
+          "content": "a. slowly",
+          "note": "-"
+        },
+        {
+          "id": "1705296866728",
+          "correct": false,
+          "content": "b. exactly",
+          "note": "-"
+        },
+        {
+          "id": "1705296878514",
+          "correct": false,
+          "content": "c. greatly",
+          "note": "-"
+        },
+        {
+          "id": "1705296889462",
+          "correct": false,
+          "content": "d. recently",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-14 23:35:00",
+      "updatedAt": "2024-01-14 23:35:00"
+    }
+  ],
   "parts": [
     {
       "id": "8c8d557a-47bf-4a4f-92d8-5c70a2ba56e1",
