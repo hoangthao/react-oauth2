@@ -81,31 +81,32 @@ const ListUnit = ({bookId}) => {
     ));
 
     return ( <>
-        {units.length > 0 && (
-        <List spacing="xs">
-            {rows}
-            <List.Item style={{listStyleType: 'none'}}>
-                <Group>
-                    <ActionIcon onClick={() => mutateDelete.mutate(form.id)} color='gray' display={show && form.id !== ''? 'block':'none'}>
-                        <IconTrash />
-                    </ActionIcon>
-                    <TextInput  display={show? 'block':'none'}
-                    value={form.title}
-                    onChange={(e) => setForm((val) => { return {...val, title: e.target.value} })}/>
-                    <ActionIcon onClick={handleSubmit}  display={show? 'block':'none'}>
-                        <IconCheck/>
-                    </ActionIcon>
-                    <ActionIcon onClick={() => {setShow(false); setForm(initial);}}  display={show? 'block':'none'} color="lime">
-                        <IconX/>
-                    </ActionIcon>
-                    <ActionIcon color="lime" onClick={() => setShow(true)}  display={show? 'none':'block'}>
-                        <IconPlus/>
-                    </ActionIcon>
-                </Group>
-            </List.Item>
         
+        <List spacing="xs">
+            {units.length > 0 && rows}
+            {bookId && (
+                <List.Item style={{listStyleType: 'none'}}>
+                    <Group>
+                        <ActionIcon onClick={() => mutateDelete.mutate(form.id)} color='gray' display={show && form.id !== ''? 'block':'none'}>
+                            <IconTrash />
+                        </ActionIcon>
+                        <TextInput  display={show? 'block':'none'}
+                        value={form.title}
+                        onChange={(e) => setForm((val) => { return {...val, title: e.target.value} })}/>
+                        <ActionIcon onClick={handleSubmit}  display={show? 'block':'none'}>
+                            <IconCheck/>
+                        </ActionIcon>
+                        <ActionIcon onClick={() => {setShow(false); setForm(initial);}}  display={show? 'block':'none'} color="lime">
+                            <IconX/>
+                        </ActionIcon>
+                        <ActionIcon color="lime" onClick={() => setShow(true)}  display={show? 'none':'block'}>
+                            <IconPlus/>
+                        </ActionIcon>
+                    </Group>
+                </List.Item>
+            )}
         </List>
-        )}
+       
     </> );
 }
 

@@ -194,75 +194,77 @@ const FormQuestion = ({initial}) => {
       ));
 
     return ( <>
-    <Stack>
-        <TextInput
-            label="Title"
-            mt="md"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-        />
-         <TextInput
-            label="Note"
-            mt="md"
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-        />
-        { initial.id !== undefined ? (<>
-            <TextInput
-                disabled={true}
-                label="Created At"
-                mt="md"
-                value={initial.createdAt}
-            />
-            <TextInput
-                disabled={true}
-                label="Updated At"
-                mt="md"
-                value={initial.updatedAt}
-            />
-            <TextInput
-                disabled={true}
-                label="Part ID"
-                mt="md"
-                value={initial.partId}
-            />
-         </>) : null}
-            <DragDropContext
-                onDragEnd={({ destination, source }) =>
-                handlers.reorder({ from: source.index, to: destination?.index || 0 })
-                }
-            >
-                <Table mt="md">
-                <Table.Thead>
-                    <Table.Tr>
-                    <Table.Th style={{ width: rem(40) }} />
-                    <Table.Th style={{ width: rem(40) }}>ID</Table.Th>
-                    <Table.Th style={{ width: rem(120) }}>Correct</Table.Th>
-                    <Table.Th>Content</Table.Th>
-                    <Table.Th>Note</Table.Th>
-                    <Table.Th style={{ width: rem(120) }}>&nbsp;</Table.Th>
-                    </Table.Tr>
-                </Table.Thead>
-                <Droppable droppableId="dnd-list" direction="vertical">
-                    {(provided) => (
-                    <Table.Tbody {...provided.droppableProps} ref={provided.innerRef}>
-                        {items}
-                        {provided.placeholder}
-                    </Table.Tbody>
-                     )}
-                </Droppable>
-                <Table.Caption><Button 
-                    disabled={addItem}
-                    leftSection={<IconPlus size={14} />} 
-                    onClick={() => {
-                        handlers.append({edit: 1, id: new Date().getTime().toString(), correct: false, content: '', note:'-'})
-                        setAddItem(true)
-                    }}>Add an item</Button></Table.Caption>
-                </Table>
-            </DragDropContext>
-        <div><Button mt="md" onClick={handleSubmit}>Submit</Button></div>
-        
-    </Stack>
+        <Grid>
+            <Grid.Col span={5}>
+                <Stack>
+                <TextInput
+                    label="Title"
+                    mt="md"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                />
+                <TextInput
+                    label="Note"
+                    mt="md"
+                    value={note}
+                    onChange={(e) => setNote(e.target.value)}
+                />
+                { initial.id !== undefined ? (<>
+                    <TextInput
+                        disabled={true}
+                        label="Created At"
+                        mt="md"
+                        value={initial.createdAt}
+                    />
+                    <TextInput
+                        disabled={true}
+                        label="Updated At"
+                        mt="md"
+                        value={initial.updatedAt}
+                    />
+                    <TextInput
+                        disabled={true}
+                        label="Part ID"
+                        mt="md"
+                        value={initial.partId}
+                    />
+                </>) : null}
+                <div><Button mt="md" onClick={handleSubmit}>Submit</Button></div>
+                </Stack>
+            </Grid.Col>
+            <Grid.Col span={7}>
+                <DragDropContext
+                    onDragEnd={({ destination, source }) => handlers.reorder({ from: source.index, to: destination?.index || 0 })}>
+                    <Table mt="md">
+                    <Table.Thead>
+                        <Table.Tr>
+                        <Table.Th style={{ width: rem(40) }} />
+                        <Table.Th style={{ width: rem(40) }}>ID</Table.Th>
+                        <Table.Th style={{ width: rem(120) }}>Correct</Table.Th>
+                        <Table.Th>Content</Table.Th>
+                        <Table.Th>Note</Table.Th>
+                        <Table.Th style={{ width: rem(120) }}>&nbsp;</Table.Th>
+                        </Table.Tr>
+                    </Table.Thead>
+                    <Droppable droppableId="dnd-list" direction="vertical">
+                        {(provided) => (
+                        <Table.Tbody {...provided.droppableProps} ref={provided.innerRef}>
+                            {items}
+                            {provided.placeholder}
+                        </Table.Tbody>
+                        )}
+                    </Droppable>
+                    <Table.Caption><Button 
+                        disabled={addItem}
+                        leftSection={<IconPlus size={14} />} 
+                        onClick={() => {
+                            handlers.append({edit: 1, id: new Date().getTime().toString(), correct: false, content: '', note:'-'})
+                            setAddItem(true)
+                        }}>Add an item</Button></Table.Caption>
+                    </Table>
+                </DragDropContext>
+            </Grid.Col>
+        </Grid>
     </> );
 }
  

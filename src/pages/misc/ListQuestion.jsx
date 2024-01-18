@@ -61,10 +61,10 @@ const TestItem = ({q}) => {
                 }
             </List>
             <Flex justify="flex-end">
-                <ActionIcon mt='sm' onClick={checkHandle}>
+                <ActionIcon mt='sm' onClick={checkHandle} variant='outline' color="lime">
                     {check ? <IconMinus/> : <IconCheck />}
                 </ActionIcon> 
-                <ActionIcon mt='sm' ml='sm' onClick={() => {setQuestionId(q.id); setShow(true)}}  color="lime">
+                <ActionIcon mt='sm' ml='sm' onClick={() => {setQuestionId(q.id); setShow(true)}}>
                     <IconPencil/>
                 </ActionIcon> 
             </Flex>
