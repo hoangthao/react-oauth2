@@ -18,6 +18,8 @@ import ToeicUnitPage from './pages/toeic/ToeicUnitPage'
 import ToeicQuestionPage from './pages/toeic/ToeicQuestionPage'
 import ToeicPartPage from './pages/toeic/ToeicPartPage'
 import ToeicQuestionEditPage from './pages/toeic/ToeicQuestionEditPage'
+import ToeicPracticePage from './pages/toeic/ToeicPracticePage'
+import TestPage from './pages/misc/TestPage'
 
 const App = () => {
 
@@ -31,8 +33,12 @@ const App = () => {
             <Route path='/profile' element={<ProtectedRoute><ProfilePage /></ProtectedRoute>}/>
             <Route path='/english' element={<EnglishLayout />}>
               <Route index element={<EnglishPage/>} />
+              <Route path='test' element={<TestPage/>}/>
               <Route path='toeic'>
                 <Route index  element={<ToeicBookPage />} />
+                <Route path='practice/:bookId'>
+                  <Route index element={<ToeicPracticePage />} />
+                </Route>
                 <Route path=':bookId'>
                   <Route index element={<ToeicUnitPage />} />
                   <Route path=':unitId'>

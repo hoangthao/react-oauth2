@@ -1,13 +1,14 @@
 import { Table, Group, ActionIcon} from '@mantine/core';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
-import { IconPencil, IconTrash } from '@tabler/icons-react';
-import { Link } from 'react-router-dom';
+import { IconNotebook, IconPencil, IconTrash } from '@tabler/icons-react';
+import { Link, useNavigate } from 'react-router-dom';
 import { truncate } from 'lodash'
 import { deleteBook, fetchBook } from '../ToeicAPI';
 
 const BookList = ({openForm}) => {
 
     const queryClient = useQueryClient()
+    const navigate = useNavigate()
 
     const { data: books, isLoading, error } = useQuery(['books'], () => fetchBook())
 
@@ -37,6 +38,9 @@ const BookList = ({openForm}) => {
                     </ActionIcon>
                     <ActionIcon onClick={() => openForm(element)}>
                         <IconPencil />
+                    </ActionIcon>
+                    <ActionIcon onClick={() => navigate(`practice/${element.id}`)} color='yellow'>
+                        <IconNotebook />
                     </ActionIcon>
                 </Group>
             </Table.Td>

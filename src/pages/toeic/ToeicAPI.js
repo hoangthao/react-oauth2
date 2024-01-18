@@ -32,6 +32,12 @@ export const deleteBook = async (id) => {
     return response.json();
 }
 
+export const fetchBookWithUnitById = async (id) => {
+    console.log('call fetchBookWithUnitById')
+    const response = await fetch(`${API_URL}/books/${id}?_embed=units`)
+    return response.json();
+}
+
 export const createUnit = async (data) => {
     console.log('call createUnit')
     const response = await fetch(`${API_URL}/units`, {
@@ -85,6 +91,12 @@ export const updatePart = async (data) => {
 export const fetchPartByUnitId = async (id) => {
     console.log('call fetchPartByUnitId')
     const response = await fetch(`${API_URL}/parts?unitId=${id}`)
+    return response.json();
+}
+
+export const fetchPartWithQuestionByUnitId = async (unitId) => {
+    console.log('call fetchPartWithQuestionByUnitId')
+    const response = await fetch(`${API_URL}/parts?unitId=${unitId}&_embed=questions`)
     return response.json();
 }
 
