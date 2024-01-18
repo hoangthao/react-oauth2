@@ -64,3 +64,4 @@ https://blog.logrocket.com/adding-login-authentication-secure-react-apps/
 https://developers.sap.com/tutorials/btp-cf-buildpacks-node-create.html
 https://github.com/nguyenhieptech/react-query-example/blob/main/src/api/users/use-edit-user.ts
 https://www.smashingmagazine.com/2022/01/building-real-app-react-query/
+https://chrisdevcode.hashnode.dev/how-to-create-and-deploy-a-json-server

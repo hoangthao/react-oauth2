@@ -1,186 +1,270 @@
-import { useQuery } from "react-query";
-import { fetchBook, fetchPartByUnitId, fetchQuestionByPartId, fetchUnitByBookId } from "../toeic/ToeicAPI";
-import { ActionIcon, Anchor, Button, Checkbox, Divider, Flex, Grid, Group, List, Paper, Stack, Table, Text, ThemeIcon, UnstyledButton, rem } from "@mantine/core";
-import { Link } from "react-router-dom";
-import { truncate } from "lodash";
+import { useMutation, useQuery, useQueryClient } from "react-query";
+import { createBook, createQuestion, deleteBook, fetchBook, fetchPartByUnitId, fetchQuestionById, fetchQuestionByPartId, fetchUnitByBookId, updateBook, updateQuestion } from "../toeic/ToeicAPI";
+import { ActionIcon, Anchor, Button, Checkbox, Flex, Grid, Group, List, Paper, ScrollArea, Stack, Switch, Table, Text, TextInput, ThemeIcon, UnstyledButton, rem } from "@mantine/core";
 import { createContext, useContext, useState } from "react";
+import { IconArrowNarrowLeft, IconArrowNarrowRight, IconCheck, IconCircleCheck, IconGripVertical, IconMinus, IconPencil, IconPlus, IconTrash, IconX } from "@tabler/icons-react";
+import dayjs from "dayjs";
+import ListBook from "./ListBook";
+import ListPart from "./ListPart";
+import ListQuestion from "./ListQuestion";
+import ListUnit from "./ListUnit";
+import QuestionForm from "../toeic/ToeicQuestion/QuestionForm";
 import { useListState } from "@mantine/hooks";
-import { IconArrowNarrowLeft, IconArrowNarrowRight, IconCheck, IconCircleCheck, IconMinus } from "@tabler/icons-react";
+import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
+import classes from '../toeic/DndTable.module.css';
 
-const TestContext = createContext()
+export const TestContext = createContext()
 
 const TestPage = () => {
 
     const [ bookId, setBookId] = useState('')
     const [ unitId, setUnitId] = useState('')
     const [ partId, setPartId] = useState('')
+    const [ questionId, setQuestionId] = useState('')
+    const [ show, setShow ] = useState(false)
+    const [ index, setIndex ] = useState(0)
+
+    const changePart = (id) => {
+        setPartId(id)
+        setQuestionId('')
+        setShow(false)
+        setIndex(0)
+    }
+
+    const changeUnit = (id) => {
+        setUnitId(id)
+        changePart('')
+    }
+
+    const changeBook = (id) => {
+        setBookId(id)
+        changeUnit('')
+    }
 
     return ( 
-        <TestContext.Provider value={{setBookId, setUnitId, setPartId}}>
-    <Grid>
-        <Grid.Col span={4}><ListBook/></Grid.Col>
-        <Grid.Col span={4}><ListUnit bookId={bookId}/></Grid.Col>
-        <Grid.Col span={4}><ListPart unitId={unitId}/></Grid.Col>
-        <Grid.Col span={12}>
-            <ListQuestion partId={partId}/>
-        </Grid.Col>
-      </Grid>
-      </TestContext.Provider>
-      );
+        <TestContext.Provider value={{bookId, changeBook, 
+                                    unitId, changeUnit, 
+                                    partId, changePart,
+                                    setShow, setQuestionId,
+                                    index, setIndex}}>
+            <Grid>
+                <Grid.Col span={4}><ScrollArea h={250}><ListBook/></ScrollArea></Grid.Col>
+                <Grid.Col span={4}><ScrollArea h={250}><ListUnit bookId={bookId}/></ScrollArea></Grid.Col>
+                <Grid.Col span={4}><ScrollArea h={250}><ListPart unitId={unitId}/></ScrollArea></Grid.Col>
+                <Grid.Col span={12} display={show? 'none':'block'}>
+                    <ListQuestion partId={partId}/>
+                </Grid.Col>
+                <Grid.Col span={12}>
+                    { partId !== ''  && (
+                        <ActionIcon color="lime" onClick={() => setShow((prev) => !prev)} mt='sm'>
+                            {show ? <IconMinus/> : <IconPlus/>}
+                        </ActionIcon>
+                    )}
+                </Grid.Col>
+                <Grid.Col span={12} display={show? 'block':'none'}>
+                    <EditQuestion questionId={questionId} />
+                </Grid.Col>
+            </Grid>
+      </TestContext.Provider>);
 }
 
-const ListBook = () => {
+const EditQuestion = ({ questionId } ) => {
 
-    const { setBookId } = useContext(TestContext);
-    const { data: books, isLoading, error } = useQuery(['books'], () => fetchBook())
+    const { partId } = useContext(TestContext);
+    let initial = {
+        title: '', note: '-', answers: [], partId
+    }
 
-    if (isLoading) return 'Loading...';
-    if (error) return `An error occurred ${error.message}`;    
-
-    const rows = books.map((e) => (
-        <List.Item style={{listStyleType: 'none'}} key={e.id}><UnstyledButton onClick={() => setBookId(e.id)}>{e.title}</UnstyledButton></List.Item>
-    ));
-
-    return (
-        <List
-      mt='md'
-      spacing="xs"
-      size="sm"
-      center
-      icon={
-        <ThemeIcon color="teal" size={24} radius="xl">
-          <IconCircleCheck style={{ width: rem(16), height: rem(16) }} />
-        </ThemeIcon>
-      }
-    >{rows}</List>
-   )
-}
-
-const ListUnit = ({bookId}) => {
-
-    const { setUnitId } = useContext(TestContext);
-
-    const { data: units, isLoading, error } = useQuery(['units', bookId], () => bookId === ''? [] : fetchUnitByBookId(bookId))
+    const { data, isLoading, error } = useQuery(['questions-detail', questionId], 
+    () => questionId === '' ? null : fetchQuestionById(questionId))
 
     if (isLoading) return 'Loading...';
     if (error) return `An error occurred ${error.message}`;
 
-   
-    const rows = units.map((e) => (
-        <List.Item style={{listStyleType: 'none'}} key={e.id}><UnstyledButton onClick={() => setUnitId(e.id)}>{e.title}</UnstyledButton></List.Item>
-    ));
-
-    return ( <>
-        {units.length > 0 && (
-        <List
-        mt='md'
-        spacing="xs"
-        size="sm"
-        center
-        icon={
-          <ThemeIcon color="teal" size={24} radius="xl">
-            <IconCircleCheck style={{ width: rem(16), height: rem(16) }} />
-          </ThemeIcon>
+    if (data != null) {
+        initial = data;
+        if (initial.answers) {
+            initial.answers = initial.answers?.map((item) => ({...item, edit: 0}))
         }
-      >{rows}</List>
-        )}
-    </> );
-}
-
-const ListPart = ({unitId}) => {
-
-    const { setPartId } = useContext(TestContext);
-
-    const { data: parts, isLoading, error } = useQuery(['parts', unitId], () => unitId === '' ? [] : fetchPartByUnitId(unitId))
-
-    if (isLoading) return 'Loading...';
-    if (error) return `An error occurred ${error.message}`;
-
-    const rows = parts.map((e) => (
-        <List.Item style={{listStyleType: 'none'}} key={e.id}><UnstyledButton onClick={() => setPartId(e.id)}>{e.title}</UnstyledButton></List.Item>
-    ));
-
-    return ( <>
-        {parts.length > 0 && (<List
-      mt='md'
-      spacing="xs"
-      size="sm"
-      center
-      icon={
-        <ThemeIcon color="teal" size={24} radius="xl">
-          <IconCircleCheck style={{ width: rem(16), height: rem(16) }} />
-        </ThemeIcon>
-      }
-    >{rows}</List>)}
-    </> );
-}
-
-const ListQuestion = ({partId}) => {
-
-    const [index, setIndex] = useState(0)
-    const { data: questions, isLoading, error } = useQuery(['questions', partId], () => partId === '' ? [] : fetchQuestionByPartId(partId))
-
-    if (isLoading) return 'Loading...';
-    if (error) return `An error occurred ${error.message}`;
-
-    //const rows = questions.map((e) => (<TestItem key={e.id} q={e}/>));
-
-    return ( <>
-        {questions.length > 0 && (<Stack>
-            <TestItem q={questions[index]}/>
-            <Group>
-                <Button onClick={() => setIndex(prev => prev - 1)}
-                    leftSection={<IconArrowNarrowLeft size={14} />}
-                    disabled={index === 0}>Prev</Button>
-                <Text size="sm">{`Show item ${index + 1}/${questions.length}`}</Text>
-                <Button onClick={() => setIndex(prev => prev + 1)}
-                    rightSection={<IconArrowNarrowRight size={14} />}
-                    disabled={index === questions.length-1}>Next</Button>
-            </Group>
-            
-        </Stack>
-        )}
-    </> );
-}
-
-const TestItem = ({q}) => {
-
-    const [check, setCheck] = useState(false)
-    const checkHandle = () => {
-        setCheck(!check)
     }
+     return ( <>
+       <FormQuestion initial={initial} />
+    </> );
+}
 
-    return (
-        <Paper shadow="xs" p="xl" mt='sm'>
-            <Text mb='sm'>{q.title}</Text>
-            <List>
-                {
-                    q.answers.map((a) => (
-                        <List.Item key={a.id} style={{listStyleType: 'none'}}>
-                            <Group>
-                                <Checkbox variant="outline" onChange={(e) => console.log(e.currentTarget.checked, a.id)} label={a.content} />
-                                <Text size="sm" c='red' style={{display: check ? 'block' : 'none'}}>{a.correct ? 'correct' : ''}</Text>
-                            </Group>
-                        </List.Item>
-                    ))
-                }
-            </List>
-            <Flex justify="flex-end">
-                <ActionIcon mt='sm' onClick={checkHandle}>
-                    {check ? <IconMinus/> : <IconCheck />}
-                </ActionIcon> 
-            </Flex>
-               
-        </Paper>
+const FormQuestion = ({initial}) => {
+
+    const { setShow, setQuestionId } = useContext(TestContext);
+    const queryClient = useQueryClient()
+    const [title, setTitle] = useState(initial.title)
+    const [note, setNote] = useState(initial.note)
+    const [addItem, setAddItem] = useState(false)
+    const [state, handlers] = useListState(initial.answers || []);
+
+    const mutation = useMutation(
+        (data) => initial.id === undefined ? createQuestion(data) : updateQuestion(data),
+        {
+            onSuccess: (resp) => {
+                setQuestionId('')
+                setTitle('')
+                setNote('-')
+                handlers.setState([])
+                setAddItem(false);
+                setShow(false)
+                queryClient.invalidateQueries(['questions', initial.partId])
+            }
+        }
     )
-}
 
-
-const styles = {
-    listItem: {
-        listStyleType: 'none'
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const now = dayjs().format('YYYY-MM-DD HH:mm:ss')
+        if (initial.id === undefined) {
+            mutation.mutate({
+                id: crypto.randomUUID(),
+                title,
+                note,
+                partId: initial.partId,
+                answers: state.map(({edit, ...keepAttrs}) => keepAttrs),
+                createdAt: now,
+                updatedAt: now,
+            })
+        } else {
+            mutation.mutate({
+                id: initial.id,
+                title,
+                note,
+                partId: initial.partId,
+                answers: state.map(({edit, ...keepAttrs}) => keepAttrs),
+                createdAt: initial.createdAt,
+                updatedAt: now,
+            })
+        }
     }
-}
 
+    const items = state.map((item, index) => (
+        <Draggable key={item.id} index={index} draggableId={item.id}>
+          {(provided) => (
+            <Table.Tr className={classes.item} ref={provided.innerRef} {...provided.draggableProps}>
+              <Table.Td>
+                <div className={classes.dragHandle} {...provided.dragHandleProps}>
+                  <IconGripVertical style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+                </div>
+              </Table.Td>
+              <Table.Td style={{ width: rem(80) }}>{item.id}</Table.Td>
+              <Table.Td style={{ width: rem(120) }}>{
+                item.edit === 0 ? (item.correct ? <Text size="sm" c="red">Yes</Text> : <Text size="sm">No</Text>) : (
+                    <Switch
+                    onLabel="Yes" offLabel="No" size="lg" 
+                    checked={item.correct}
+                    onChange={(e) => handlers.setItemProp(index, 'correct', e.currentTarget.checked)}
+                    />
+                )
+              }</Table.Td>
+              <Table.Td>{item.edit === 0 ? item.content : <TextInput autoFocus value={item.content} onChange={(e) => handlers.setItemProp(index, 'content', e.target.value)}/>}</Table.Td>
+              <Table.Td>{item.edit === 0 ? item.note : <TextInput value={item.note} onChange={(e) => handlers.setItemProp(index, 'note', e.target.value)}/>}</Table.Td>
+              <Table.Td>
+                {item.edit === 0 ? (
+                    <Group>
+                    <ActionIcon onClick={() => handlers.remove(index)} color='lime'>
+                        <IconTrash />
+                    </ActionIcon>
+                    <ActionIcon onClick={() => {
+                        handlers.apply((item, idx) => ({ ...item, edit: idx === index ? 1 : 0 }))
+                        setAddItem(true)    
+                    }}>
+                        <IconPencil />
+                    </ActionIcon>
+                </Group>
+                ) : (
+                    <Group>
+                        <ActionIcon onClick={() => {
+                            handlers.setItemProp(index, 'edit', 0)
+                            setAddItem(false)
+                        }}>
+                            <IconCheck />
+                        </ActionIcon>
+                    </Group>
+                ) }
+                
+              </Table.Td>
+            </Table.Tr>
+          )}
+        </Draggable>
+      ));
+
+    return ( <>
+    <Stack>
+        <TextInput
+            label="Title"
+            mt="md"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+        />
+         <TextInput
+            label="Note"
+            mt="md"
+            value={note}
+            onChange={(e) => setNote(e.target.value)}
+        />
+        { initial.id !== undefined ? (<>
+            <TextInput
+                disabled={true}
+                label="Created At"
+                mt="md"
+                value={initial.createdAt}
+            />
+            <TextInput
+                disabled={true}
+                label="Updated At"
+                mt="md"
+                value={initial.updatedAt}
+            />
+            <TextInput
+                disabled={true}
+                label="Part ID"
+                mt="md"
+                value={initial.partId}
+            />
+         </>) : null}
+            <DragDropContext
+                onDragEnd={({ destination, source }) =>
+                handlers.reorder({ from: source.index, to: destination?.index || 0 })
+                }
+            >
+                <Table mt="md">
+                <Table.Thead>
+                    <Table.Tr>
+                    <Table.Th style={{ width: rem(40) }} />
+                    <Table.Th style={{ width: rem(40) }}>ID</Table.Th>
+                    <Table.Th style={{ width: rem(120) }}>Correct</Table.Th>
+                    <Table.Th>Content</Table.Th>
+                    <Table.Th>Note</Table.Th>
+                    <Table.Th style={{ width: rem(120) }}>&nbsp;</Table.Th>
+                    </Table.Tr>
+                </Table.Thead>
+                <Droppable droppableId="dnd-list" direction="vertical">
+                    {(provided) => (
+                    <Table.Tbody {...provided.droppableProps} ref={provided.innerRef}>
+                        {items}
+                        {provided.placeholder}
+                    </Table.Tbody>
+                     )}
+                </Droppable>
+                <Table.Caption><Button 
+                    disabled={addItem}
+                    leftSection={<IconPlus size={14} />} 
+                    onClick={() => {
+                        handlers.append({edit: 1, id: new Date().getTime().toString(), correct: false, content: '', note:'-'})
+                        setAddItem(true)
+                    }}>Add an item</Button></Table.Caption>
+                </Table>
+            </DragDropContext>
+        <div><Button mt="md" onClick={handleSubmit}>Submit</Button></div>
+        
+    </Stack>
+    </> );
+}
+ 
  
 export default TestPage;
