@@ -277,6 +277,1026 @@
       ],
       "createdAt": "2024-01-18 16:39:30",
       "updatedAt": "2024-01-18 16:39:55"
+    },
+    {
+      "id": "47492610-ecc4-492b-8cd6-9183bd89c7c3",
+      "title": "101. Before operating your handheld device, please ----- the enclosed cable to charge it.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705627366081",
+          "correct": false,
+          "content": "a. plan",
+          "note": "-"
+        },
+        {
+          "id": "1705627402032",
+          "correct": false,
+          "content": "b. remain",
+          "note": "-"
+        },
+        {
+          "id": "1705627415076",
+          "correct": true,
+          "content": "c. use",
+          "note": "-"
+        },
+        {
+          "id": "1705627425134",
+          "correct": false,
+          "content": "d. finish",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:23:55",
+      "updatedAt": "2024-01-18 19:23:55"
+    },
+    {
+      "id": "6d98a09c-37f5-4864-aff7-35a037ba87c7",
+      "title": "102. Safile's new external hard drive can ----- store up to one terabyte of data.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705627495548",
+          "correct": false,
+          "content": "a. secure",
+          "note": "-"
+        },
+        {
+          "id": "1705627504531",
+          "correct": false,
+          "content": "b. security",
+          "note": "-"
+        },
+        {
+          "id": "1705627514658",
+          "correct": true,
+          "content": "c. securely",
+          "note": "-"
+        },
+        {
+          "id": "1705627524858",
+          "correct": false,
+          "content": "d. secured",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:25:31",
+      "updatedAt": "2024-01-18 19:25:31"
+    },
+    {
+      "id": "de49577a-1cb8-453b-be8f-9fc9843e1a10",
+      "title": "103. Mr. Peterson will travel ----- the Tokyo office for the annual meeting.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705627581460",
+          "correct": true,
+          "content": "a. to",
+          "note": "-"
+        },
+        {
+          "id": "1705627591259",
+          "correct": false,
+          "content": "b. through",
+          "note": "-"
+        },
+        {
+          "id": "1705627596613",
+          "correct": false,
+          "content": "c. in",
+          "note": "-"
+        },
+        {
+          "id": "1705627601135",
+          "correct": false,
+          "content": "d. over",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:26:47",
+      "updatedAt": "2024-01-18 19:26:47"
+    },
+    {
+      "id": "17f4f7ee-db4f-4005-91f3-1554a1fafe1b",
+      "title": "104. Yong-Soo Cosmetics will not charge for items on back order until ----- have left our warehouse.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705627688184",
+          "correct": false,
+          "content": "a. them",
+          "note": "-"
+        },
+        {
+          "id": "1705627696378",
+          "correct": true,
+          "content": "b. they",
+          "note": "-"
+        },
+        {
+          "id": "1705627705058",
+          "correct": false,
+          "content": "c. themselves",
+          "note": "-"
+        },
+        {
+          "id": "1705627712429",
+          "correct": false,
+          "content": "d. their",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:28:38",
+      "updatedAt": "2024-01-18 19:28:52"
+    },
+    {
+      "id": "82cc2ffb-45a5-4b52-ac43-30fc9692bd7f",
+      "title": "105. Our premium day tour takes visitors to historic sites ----- the Aprico River.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705627819187",
+          "correct": false,
+          "content": "a. onto",
+          "note": "-"
+        },
+        {
+          "id": "1705627824716",
+          "correct": false,
+          "content": "b. since",
+          "note": "-"
+        },
+        {
+          "id": "1705627829770",
+          "correct": false,
+          "content": "c. inside",
+          "note": "-"
+        },
+        {
+          "id": "1705627839895",
+          "correct": true,
+          "content": "d. along",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:31:02",
+      "updatedAt": "2024-01-18 19:31:02"
+    },
+    {
+      "id": "2d34f110-cf45-419f-8d03-8102084d1786",
+      "title": "106. Eighty percent of drivers surveyed said they would consider buying a vehicle that runs on -----.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705627930766",
+          "correct": true,
+          "content": "a. electricity",
+          "note": "-"
+        },
+        {
+          "id": "1705627964984",
+          "correct": false,
+          "content": "b. electrically",
+          "note": "-"
+        },
+        {
+          "id": "1705627975375",
+          "correct": false,
+          "content": "c. electricians",
+          "note": "-"
+        },
+        {
+          "id": "1705627999070",
+          "correct": false,
+          "content": "d. electrify",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:33:32",
+      "updatedAt": "2024-01-18 19:33:32"
+    },
+    {
+      "id": "7e7b61be-fe86-4528-8cae-b785d1d6e7fa",
+      "title": "107. Xinzhe Zu has ----- Petrin Engineering as the vice president of operations.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705628059117",
+          "correct": false,
+          "content": "a. attached",
+          "note": "-"
+        },
+        {
+          "id": "1705628078589",
+          "correct": false,
+          "content": "b. resigned",
+          "note": "-"
+        },
+        {
+          "id": "1705628090205",
+          "correct": true,
+          "content": "c. joined",
+          "note": "-"
+        },
+        {
+          "id": "1705628101338",
+          "correct": false,
+          "content": "d. combined",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:35:09",
+      "updatedAt": "2024-01-18 19:35:09"
+    },
+    {
+      "id": "b59ec34a-a6d6-4af3-87aa-0d7c153ceb5d",
+      "title": "108. Next month, Barder House Books will be holding ----- third author's hour in Cleveland.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705628214127",
+          "correct": false,
+          "content": "a. it",
+          "note": "-"
+        },
+        {
+          "id": "1705628220872",
+          "correct": false,
+          "content": "b. itself",
+          "note": "-"
+        },
+        {
+          "id": "1705628233409",
+          "correct": false,
+          "content": "c. its own",
+          "note": "-"
+        },
+        {
+          "id": "1705628254594",
+          "correct": true,
+          "content": "d. its",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:37:46",
+      "updatedAt": "2024-01-18 19:37:46"
+    },
+    {
+      "id": "8ca2f44e-1134-4e0f-a332-66e0c99b6620",
+      "title": "109. Chester's Tiles ----- expanded to a second location in Turnington.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705628364591",
+          "correct": false,
+          "content": "a. severely",
+          "note": "-"
+        },
+        {
+          "id": "1705628373821",
+          "correct": false,
+          "content": "b. usually",
+          "note": "-"
+        },
+        {
+          "id": "1705628387357",
+          "correct": true,
+          "content": "c. recently",
+          "note": "-"
+        },
+        {
+          "id": "1705628397025",
+          "correct": false,
+          "content": "d. exactly",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:40:07",
+      "updatedAt": "2024-01-18 19:40:07"
+    },
+    {
+      "id": "5a6cdc69-0b8c-40ba-9929-3239fc083d7f",
+      "title": "110. Tabrino's has ----- increased the number of almonds in the Nut Medley snack pack.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705628468251",
+          "correct": false,
+          "content": "a. significant",
+          "note": "-"
+        },
+        {
+          "id": "1705628480728",
+          "correct": false,
+          "content": "b. significance",
+          "note": "-"
+        },
+        {
+          "id": "1705628491008",
+          "correct": false,
+          "content": "c. signifies",
+          "note": "-"
+        },
+        {
+          "id": "1705628503921",
+          "correct": true,
+          "content": "d. significantly",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:42:08",
+      "updatedAt": "2024-01-18 19:42:08"
+    },
+    {
+      "id": "84fafa78-db99-4e3e-8263-bf597c74f74f",
+      "title": "111. ----- she travels, Jacintha Flores collects  samples of local fabrics and patterns.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705628568107",
+          "correct": true,
+          "content": "a. Wherever",
+          "note": "-"
+        },
+        {
+          "id": "1705628579650",
+          "correct": false,
+          "content": "b. In addition to",
+          "note": "-"
+        },
+        {
+          "id": "1705628586755",
+          "correct": false,
+          "content": "c. Either",
+          "note": "-"
+        },
+        {
+          "id": "1705628593531",
+          "correct": false,
+          "content": "d. In contrast to",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:43:40",
+      "updatedAt": "2024-01-18 19:43:40"
+    },
+    {
+      "id": "fcf3bfe4-6f45-4798-8b91-9ea17db234d9",
+      "title": "112. Most picture ----- at Glowing Photo Lab go on sale at 3:00 PM today.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705628677845",
+          "correct": false,
+          "content": "a. framer",
+          "note": "-"
+        },
+        {
+          "id": "1705628684694",
+          "correct": false,
+          "content": "b. framing",
+          "note": "-"
+        },
+        {
+          "id": "1705628690774",
+          "correct": false,
+          "content": "c. framed",
+          "note": "-"
+        },
+        {
+          "id": "1705628698998",
+          "correct": true,
+          "content": "d. frames",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:45:07",
+      "updatedAt": "2024-01-18 19:45:07"
+    },
+    {
+      "id": "ac58dbf7-c0c3-420e-9499-67cad7f00e6c",
+      "title": "113. All students in the business management class hold ----- college degrees.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705628777131",
+          "correct": false,
+          "content": "a. late",
+          "note": "-"
+        },
+        {
+          "id": "1705628782803",
+          "correct": false,
+          "content": "b. developed",
+          "note": "-"
+        },
+        {
+          "id": "1705628788757",
+          "correct": true,
+          "content": "c. advanced",
+          "note": "-"
+        },
+        {
+          "id": "1705628796802",
+          "correct": false,
+          "content": "d. elated",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:46:59",
+      "updatedAt": "2024-01-18 19:46:59"
+    },
+    {
+      "id": "0920e48d-6801-47ac-a914-49c4ddb0f9a0",
+      "title": "114. We hired Noah Wan of Shengyao Accounting Ltd. ----- our company's financial assets.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705628874128",
+          "correct": true,
+          "content": "a. to evaluate",
+          "note": "-"
+        },
+        {
+          "id": "1705628886210",
+          "correct": false,
+          "content": "b. to be evaluated",
+          "note": "-"
+        },
+        {
+          "id": "1705628896067",
+          "correct": false,
+          "content": "c. will be evaluated",
+          "note": "-"
+        },
+        {
+          "id": "1705628907980",
+          "correct": false,
+          "content": "d. evaluate",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:49:07",
+      "updatedAt": "2024-01-18 19:49:07"
+    },
+    {
+      "id": "7e85a318-2f43-48b8-b3b0-3c90b7610b5e",
+      "title": "115. Ms. Charisse is taking on a new account ----- she finishes the Morrison project.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705629016309",
+          "correct": false,
+          "content": "a. with",
+          "note": "-"
+        },
+        {
+          "id": "1705629021295",
+          "correct": false,
+          "content": "b. going",
+          "note": "-"
+        },
+        {
+          "id": "1705629027231",
+          "correct": true,
+          "content": "c. after",
+          "note": "-"
+        },
+        {
+          "id": "1705629033175",
+          "correct": false,
+          "content": "d. between",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:50:47",
+      "updatedAt": "2024-01-18 19:50:47"
+    },
+    {
+      "id": "b84522c3-17a2-447c-8101-c3aba10fcea9",
+      "title": "116. Cormet Motors' profits are ----- this year than last year.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705629103800",
+          "correct": true,
+          "content": "a. higher",
+          "note": "-"
+        },
+        {
+          "id": "1705629122305",
+          "correct": false,
+          "content": "b. high",
+          "note": "-"
+        },
+        {
+          "id": "1705629138234",
+          "correct": false,
+          "content": "c. highly",
+          "note": "-"
+        },
+        {
+          "id": "1705629144370",
+          "correct": false,
+          "content": "d. highest",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:52:35",
+      "updatedAt": "2024-01-18 19:52:35"
+    },
+    {
+      "id": "1dcb84a3-a327-46f5-9b09-1d2f5792a941",
+      "title": "117. In its ----- advertising campaign, Jaymor Tools demonstrates how reliable its products are.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705629215671",
+          "correct": true,
+          "content": "a. current",
+          "note": "-"
+        },
+        {
+          "id": "1705629224012",
+          "correct": false,
+          "content": "b. relative",
+          "note": "-"
+        },
+        {
+          "id": "1705629232580",
+          "correct": false,
+          "content": "c. spacious",
+          "note": "-"
+        },
+        {
+          "id": "1705629241941",
+          "correct": false,
+          "content": "d. collected",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:54:14",
+      "updatedAt": "2024-01-18 19:54:14"
+    },
+    {
+      "id": "23febfcb-81f2-45d3-9f09-fa7b8c47f50d",
+      "title": "118. Remember to submit receipts for reimbursement ----- returning from a business trip.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705629330103",
+          "correct": false,
+          "content": "a. such as",
+          "note": "-"
+        },
+        {
+          "id": "1705629336080",
+          "correct": true,
+          "content": "b. when",
+          "note": "-"
+        },
+        {
+          "id": "1705629347144",
+          "correct": false,
+          "content": "c. then",
+          "note": "-"
+        },
+        {
+          "id": "1705629352904",
+          "correct": false,
+          "content": "d. within",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:55:58",
+      "updatedAt": "2024-01-18 19:55:58"
+    },
+    {
+      "id": "c5a8ef23-9671-4bce-8673-c834903617d5",
+      "title": "119. Patrons will be able to access Westside Library's ----- acquired collection of books on Tuesday.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705629460450",
+          "correct": false,
+          "content": "a. instantly",
+          "note": "-"
+        },
+        {
+          "id": "1705629469811",
+          "correct": false,
+          "content": "b. newly",
+          "note": "-"
+        },
+        {
+          "id": "1705629475019",
+          "correct": true,
+          "content": "c. early",
+          "note": "-"
+        },
+        {
+          "id": "1705629485491",
+          "correct": false,
+          "content": "d. naturally",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:58:18",
+      "updatedAt": "2024-01-18 19:58:18"
+    },
+    {
+      "id": "9e1866c3-9241-47b6-a8b6-3bb623c6d114",
+      "title": "120. Please ----- any questions about time sheets to Tabitha Jones in the payroll department.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705629551119",
+          "correct": false,
+          "content": "a, direction",
+          "note": "-"
+        },
+        {
+          "id": "1705629563949",
+          "correct": false,
+          "content": "b. directive",
+          "note": "-"
+        },
+        {
+          "id": "1705629571677",
+          "correct": false,
+          "content": "c. directed",
+          "note": "-"
+        },
+        {
+          "id": "1705629579893",
+          "correct": true,
+          "content": "d. direct",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 19:59:51",
+      "updatedAt": "2024-01-18 19:59:51"
+    },
+    {
+      "id": "2c97513b-75ab-4950-a6a7-db41b887d910",
+      "title": "121. Before signing a delivery -----, be sure to double-check that all the items ordered are in the shipment.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705629697436",
+          "correct": false,
+          "content": "a. decision",
+          "note": "-"
+        },
+        {
+          "id": "1705629703505",
+          "correct": false,
+          "content": "b. announcement",
+          "note": "-"
+        },
+        {
+          "id": "1705629711705",
+          "correct": true,
+          "content": "c. receipt",
+          "note": "-"
+        },
+        {
+          "id": "1705629721825",
+          "correct": false,
+          "content": "d. limit",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 20:02:09",
+      "updatedAt": "2024-01-18 20:02:09"
+    },
+    {
+      "id": "d4294b42-3256-4d8b-b112-f971293e30f1",
+      "title": "122. Funds have been added to the budget for expenses ----- with the new building.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705629770523",
+          "correct": true,
+          "content": "a. associated",
+          "note": "-"
+        },
+        {
+          "id": "1705629785155",
+          "correct": false,
+          "content": "b. association",
+          "note": "-"
+        },
+        {
+          "id": "1705629792715",
+          "correct": false,
+          "content": "c. associate",
+          "note": "-"
+        },
+        {
+          "id": "1705629798588",
+          "correct": false,
+          "content": "d. associates",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 20:03:30",
+      "updatedAt": "2024-01-18 20:03:30"
+    },
+    {
+      "id": "26750678-02a2-418d-b0eb-876a4e4c26dc",
+      "title": "123. Ms. Bernard ----- that a deadline was approaching, so she requested some assistance.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705629865225",
+          "correct": true,
+          "content": "a. noticed",
+          "note": "-"
+        },
+        {
+          "id": "1705629872918",
+          "correct": false,
+          "content": "b. obscured",
+          "note": "-"
+        },
+        {
+          "id": "1705629885382",
+          "correct": false,
+          "content": "c. withdrew",
+          "note": "-"
+        },
+        {
+          "id": "1705629893447",
+          "correct": false,
+          "content": "d. appeared",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 20:05:03",
+      "updatedAt": "2024-01-18 20:05:03"
+    },
+    {
+      "id": "b52f9d71-4784-4dcd-b0de-683cf8aa0fb2",
+      "title": "124. Mr. Moscowitz is ----- that Dr. Tanaka will agree to present the keynote speech at this year's conference.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705629993874",
+          "correct": false,
+          "content": "a. hopes",
+          "note": "-"
+        },
+        {
+          "id": "1705630002169",
+          "correct": true,
+          "content": "b. hoped",
+          "note": "-"
+        },
+        {
+          "id": "1705630012970",
+          "correct": false,
+          "content": "c. hopeful",
+          "note": "-"
+        },
+        {
+          "id": "1705630024114",
+          "correct": false,
+          "content": "d. hopefully",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 20:07:18",
+      "updatedAt": "2024-01-18 20:07:18"
+    },
+    {
+      "id": "6ad2e7bb-9884-411c-b3cb-3a7ecc926a05",
+      "title": "125. Two Australian companies are developing new smartphones, but it is unclear ----- phone will become available first.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705630108411",
+          "correct": true,
+          "content": "a. if",
+          "note": "-"
+        },
+        {
+          "id": "1705630116469",
+          "correct": false,
+          "content": "b. which",
+          "note": "-"
+        },
+        {
+          "id": "1705630123748",
+          "correct": false,
+          "content": "c. before",
+          "note": "-"
+        },
+        {
+          "id": "1705630128036",
+          "correct": false,
+          "content": "d. because",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 20:08:54",
+      "updatedAt": "2024-01-18 20:08:54"
+    },
+    {
+      "id": "5469fb17-9acc-4078-8c16-1b2a96a3ada3",
+      "title": "126. Corners Gym offers its members a free lesson in how to use ----- properly.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705630190606",
+          "correct": false,
+          "content": "a. weighs",
+          "note": "-"
+        },
+        {
+          "id": "1705630201950",
+          "correct": true,
+          "content": "b. weights",
+          "note": "-"
+        },
+        {
+          "id": "1705630214983",
+          "correct": false,
+          "content": "c. weighty",
+          "note": "-"
+        },
+        {
+          "id": "1705630220599",
+          "correct": false,
+          "content": "d. weighed",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 20:10:30",
+      "updatedAt": "2024-01-18 20:10:30"
+    },
+    {
+      "id": "7e8d49b6-4395-466b-932e-59f7018889c0",
+      "title": "127. ----- the rules, overnight parking is not permitted at the clubhouse facility.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705630282520",
+          "correct": false,
+          "content": "a. Prior to",
+          "note": "-"
+        },
+        {
+          "id": "1705630290409",
+          "correct": false,
+          "content": "b. Except to",
+          "note": "-"
+        },
+        {
+          "id": "1705630298793",
+          "correct": false,
+          "content": "c. Instead of",
+          "note": "-"
+        },
+        {
+          "id": "1705630309073",
+          "correct": true,
+          "content": "d. According to",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 20:11:59",
+      "updatedAt": "2024-01-18 20:11:59"
+    },
+    {
+      "id": "0421e486-ec24-44bc-b053-8234ccae4e9a",
+      "title": "128. Once everyone -----, we can begin the conference call.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705630357935",
+          "correct": true,
+          "content": "a. arrived",
+          "note": "-"
+        },
+        {
+          "id": "1705630369610",
+          "correct": false,
+          "content": "b. is arriving",
+          "note": "-"
+        },
+        {
+          "id": "1705630378650",
+          "correct": false,
+          "content": "c. to arrive",
+          "note": "-"
+        },
+        {
+          "id": "1705630384331",
+          "correct": false,
+          "content": "d. has arrived",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 20:13:18",
+      "updatedAt": "2024-01-18 20:13:18"
+    },
+    {
+      "id": "62cf7286-7e43-4e74-9279-1581358d863a",
+      "title": "129. Each summer a motivational video that highlights the past year's ----- is shown to all company employees.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705630466160",
+          "correct": true,
+          "content": "a. preferences",
+          "note": "-"
+        },
+        {
+          "id": "1705630476663",
+          "correct": false,
+          "content": "b. accomplishments",
+          "note": "-"
+        },
+        {
+          "id": "1705630487391",
+          "correct": false,
+          "content": "c. communications",
+          "note": "-"
+        },
+        {
+          "id": "1705630496567",
+          "correct": false,
+          "content": "d. uncertainties",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 20:15:22",
+      "updatedAt": "2024-01-18 20:15:22"
+    },
+    {
+      "id": "7b4c9a13-c1ce-4682-be86-22aca1d583ae",
+      "title": "130. Employees who wish to attend the retirement dinner ----- Ms. Howell's 30 years of service should contact Mr. Lee.",
+      "note": "-",
+      "partId": "2fa895c2-53d1-46c4-8250-76458d9becfb",
+      "answers": [
+        {
+          "id": "1705630624970",
+          "correct": false,
+          "content": "a. honor",
+          "note": "-"
+        },
+        {
+          "id": "1705630630531",
+          "correct": true,
+          "content": "b. to honor",
+          "note": "-"
+        },
+        {
+          "id": "1705630653435",
+          "correct": false,
+          "content": "c. will honor",
+          "note": "-"
+        },
+        {
+          "id": "1705630661244",
+          "correct": false,
+          "content": "d. will be honored",
+          "note": "-"
+        }
+      ],
+      "createdAt": "2024-01-18 20:17:59",
+      "updatedAt": "2024-01-18 20:17:59"
     }
   ],
   "parts": [
@@ -303,10 +1323,10 @@
     },
     {
       "id": "3b289f04-47e6-4e21-9449-2fb94f20a93a",
-      "title": "Part 5",
+      "title": "Part 1",
       "unitId": "f91f9522-14f6-4743-91a6-7c571766d35e",
       "createdAt": "2024-01-18 16:50:47",
-      "updatedAt": "2024-01-18 16:50:57"
+      "updatedAt": "2024-01-18 19:20:49"
     },
     {
       "id": "2fa895c2-53d1-46c4-8250-76458d9becfb",
