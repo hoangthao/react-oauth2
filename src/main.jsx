@@ -4,6 +4,7 @@ import { createTheme, MantineProvider } from '@mantine/core'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import App from './App.jsx'
 import '@mantine/core/styles.css';
+import '@mantine/tiptap/styles.css';
 import { ModalsProvider } from '@mantine/modals'
 import { Notifications } from '@mantine/notifications'
 

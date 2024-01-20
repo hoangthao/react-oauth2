@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { createBook, createQuestion, deleteBook, fetchBook, fetchPartByUnitId, fetchQuestionById, fetchQuestionByPartId, fetchUnitByBookId, updateBook, updateQuestion } from "../toeic/ToeicAPI";
-import { ActionIcon, Anchor, Button, Checkbox, Flex, Grid, Group, List, Paper, ScrollArea, Stack, Switch, Table, Text, TextInput, ThemeIcon, UnstyledButton, rem } from "@mantine/core";
+import { ActionIcon, Anchor, Button, Checkbox, Flex, Grid, Group, List, Paper, ScrollArea, Stack, Switch, Table, Text, TextInput, Textarea, ThemeIcon, UnstyledButton, rem } from "@mantine/core";
 import { createContext, useContext, useState } from "react";
 import { IconArrowNarrowLeft, IconArrowNarrowRight, IconCheck, IconCircleCheck, IconGripVertical, IconMinus, IconPencil, IconPlus, IconTrash, IconX } from "@tabler/icons-react";
 import dayjs from "dayjs";
@@ -152,6 +152,11 @@ const FormQuestion = ({initial}) => {
                 </div>
               </Table.Td>
               <Table.Td style={{ width: rem(80) }}>{item.id}</Table.Td>
+              
+              <Table.Td>{item.edit === 0 ? item.content : 
+                <TextInput autoFocus value={item.content} onChange={(e) => handlers.setItemProp(index, 'content', e.target.value)}/>
+               }</Table.Td>
+              <Table.Td>{item.edit === 0 ? item.note : <TextInput value={item.note} onChange={(e) => handlers.setItemProp(index, 'note', e.target.value)}/>}</Table.Td>
               <Table.Td style={{ width: rem(120) }}>{
                 item.edit === 0 ? (item.correct ? <Text size="sm" c="red">Yes</Text> : <Text size="sm">No</Text>) : (
                     <Switch
@@ -161,8 +166,6 @@ const FormQuestion = ({initial}) => {
                     />
                 )
               }</Table.Td>
-              <Table.Td>{item.edit === 0 ? item.content : <TextInput autoFocus value={item.content} onChange={(e) => handlers.setItemProp(index, 'content', e.target.value)}/>}</Table.Td>
-              <Table.Td>{item.edit === 0 ? item.note : <TextInput value={item.note} onChange={(e) => handlers.setItemProp(index, 'note', e.target.value)}/>}</Table.Td>
               <Table.Td>
                 {item.edit === 0 ? (
                     <Group>
@@ -197,7 +200,7 @@ const FormQuestion = ({initial}) => {
         <Grid>
             <Grid.Col span={5}>
                 <Stack>
-                <TextInput
+                {/* <TextInput
                     label="Title"
                     mt="md"
                     value={title}
@@ -206,6 +209,22 @@ const FormQuestion = ({initial}) => {
                 <TextInput
                     label="Note"
                     mt="md"
+                    value={note}
+                    onChange={(e) => setNote(e.target.value)}
+                /> */}
+                <Textarea
+                    autoFocus
+                    label="Title"
+                    mt="md"
+                    autosize
+                    minRows={2}
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                />
+                <Textarea
+                    label="Note"
+                    autosize
+                    minRows={2}
                     value={note}
                     onChange={(e) => setNote(e.target.value)}
                 />
@@ -240,9 +259,9 @@ const FormQuestion = ({initial}) => {
                         <Table.Tr>
                         <Table.Th style={{ width: rem(40) }} />
                         <Table.Th style={{ width: rem(40) }}>ID</Table.Th>
-                        <Table.Th style={{ width: rem(120) }}>Correct</Table.Th>
                         <Table.Th>Content</Table.Th>
                         <Table.Th>Note</Table.Th>
+                        <Table.Th style={{ width: rem(120) }}>Correct</Table.Th>
                         <Table.Th style={{ width: rem(120) }}>&nbsp;</Table.Th>
                         </Table.Tr>
                     </Table.Thead>

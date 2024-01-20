@@ -1,4 +1,4 @@
-import { Table, Group, ActionIcon} from '@mantine/core';
+import { Table, Group, ActionIcon, rem} from '@mantine/core';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { IconNotebook, IconPencil, IconTrash } from '@tabler/icons-react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -44,6 +44,16 @@ const BookList = ({openForm}) => {
                     </ActionIcon>
                 </Group>
             </Table.Td>
+            <Table.Td>
+            <Group gap={0} justify="flex-end">
+            <ActionIcon variant="subtle" color="gray">
+                <IconPencil style={{ width: rem(16), height: rem(16) }} stroke={1.5} />
+            </ActionIcon>
+            <ActionIcon variant="subtle" color="red">
+                <IconTrash style={{ width: rem(16), height: rem(16) }} stroke={1.5} />
+            </ActionIcon>
+            </Group>
+        </Table.Td>
         </Table.Tr>
     ));
 
@@ -56,6 +66,7 @@ const BookList = ({openForm}) => {
                     <Table.Th>Created at</Table.Th>
                     <Table.Th>Updated at</Table.Th>
                     <Table.Th>&nbsp;</Table.Th>
+                    <Table.Th/>
                 </Table.Tr>
             </Table.Thead>
             <Table.Tbody>{rows}</Table.Tbody>

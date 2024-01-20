@@ -91,6 +91,7 @@ const ListUnit = ({bookId}) => {
                             <IconTrash />
                         </ActionIcon>
                         <TextInput  display={show? 'block':'none'}
+                        autoFocus
                         value={form.title}
                         onChange={(e) => setForm((val) => { return {...val, title: e.target.value} })}/>
                         <ActionIcon onClick={handleSubmit}  display={show? 'block':'none'}>

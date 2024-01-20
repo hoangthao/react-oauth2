@@ -20,6 +20,9 @@ import ToeicPartPage from './pages/toeic/ToeicPartPage'
 import ToeicQuestionEditPage from './pages/toeic/ToeicQuestionEditPage'
 import ToeicPracticePage from './pages/toeic/ToeicPracticePage'
 import TestPage from './pages/misc/TestPage'
+import InterviewPage from './pages/interview/InterviewPage'
+import InterviewLayout from './pages/interview/InterviewLayout'
+import EssentialPage from './pages/interview/EssentialPage'
 
 const App = () => {
 
@@ -31,6 +34,10 @@ const App = () => {
             <Route index element={<Home />}/>
             <Route path='/login' element={<Login />}/>
             <Route path='/profile' element={<ProtectedRoute><ProfilePage /></ProtectedRoute>}/>
+            <Route path='/interview' element={<InterviewLayout />}>
+              <Route index element={<InterviewPage/>} />
+              <Route path='essential' element={<EssentialPage/>}/>
+            </Route>
             <Route path='/english' element={<EnglishLayout />}>
               <Route index element={<EnglishPage/>} />
               <Route path='test' element={<TestPage/>}/>

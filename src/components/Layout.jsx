@@ -39,7 +39,7 @@ const Layout = () => {
         <AppShell
       header={{ height: 60 }}
       navbar={{
-        width: 300,
+        width: 200,
         breakpoint: 'sm',
         collapsed: { mobile: !opened },
       }}
@@ -52,7 +52,11 @@ const Layout = () => {
           hiddenFrom="sm"
           size="sm"
         />
-        <div>Logo &nbsp;|&nbsp; <Link to={"/english"}>English</Link></div>
+        <div>Logo 
+          &nbsp;|&nbsp; <Link to={"/english"}>English</Link>
+          &nbsp;|&nbsp; <Link to={"/interview"}>Interview</Link>
+        
+        </div>
        
       </AppShell.Header>
       <Outlet/>
