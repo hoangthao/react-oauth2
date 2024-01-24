@@ -10,7 +10,7 @@ yarn add dayjs lodash
 yarn add @mantine/core @mantine/hooks @mantine/form @mantine/dates @tabler/icons-react @mantine/modals @mantine/notifications @mantinex/dev-icons
 yarn add --dev postcss postcss-preset-mantine postcss-simple-vars
 yarn add @hello-pangea/dnd
-yarn add @mantine/tiptap @tiptap/react @tiptap/pm @tiptap/extension-link @tiptap/starter-kit
+yarn add @mantine/tiptap @tiptap/react @tiptap/pm @tiptap/extension-link @tiptap/starter-kit @tiptap/extension-highlight @tiptap/extension-underline
 ```
 
 postcss.config.cjs

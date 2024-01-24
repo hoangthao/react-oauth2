@@ -9,7 +9,8 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "server": "json-server --watch user.db.json",
-    "toeic": "json-server --watch toeic.db.json"
+    "english": "json-server --watch english.db.json",
+    "interview": "json-server --watch interview.db.json --port 4000"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^16.5.0",
@@ -22,7 +23,9 @@
     "@mantine/tiptap": "^7.4.2",
     "@mantinex/dev-icons": "^1.0.2",
     "@tabler/icons-react": "^2.46.0",
+    "@tiptap/extension-highlight": "^2.1.16",
     "@tiptap/extension-link": "^2.1.16",
+    "@tiptap/extension-underline": "^2.1.16",
     "@tiptap/pm": "^2.1.16",
     "@tiptap/react": "^2.1.16",
     "@tiptap/starter-kit": "^2.1.16",

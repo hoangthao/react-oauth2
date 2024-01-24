@@ -1,5 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "react-query";
-import { createBook, createQuestion, deleteBook, fetchBook, fetchPartByUnitId, fetchQuestionById, fetchQuestionByPartId, fetchUnitByBookId, updateBook, updateQuestion } from "../toeic/ToeicAPI";
+import { createBook, createQuestion, deleteBook, fetchBook, 
+    fetchPartByUnitId, fetchQuestionById, fetchQuestionByPartId, 
+    fetchUnitByBookId, updateBook, updateQuestion } from "../toeic/ToeicAPI";
 import { ActionIcon, Anchor, Button, Checkbox, Flex, Grid, Group, List, Paper, ScrollArea, Stack, Switch, Table, Text, TextInput, Textarea, ThemeIcon, UnstyledButton, rem } from "@mantine/core";
 import { createContext, useContext, useState } from "react";
 import { IconArrowNarrowLeft, IconArrowNarrowRight, IconCheck, IconCircleCheck, IconGripVertical, IconMinus, IconPencil, IconPlus, IconTrash, IconX } from "@tabler/icons-react";
@@ -151,7 +153,7 @@ const FormQuestion = ({initial}) => {
                   <IconGripVertical style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
                 </div>
               </Table.Td>
-              <Table.Td style={{ width: rem(80) }}>{item.id}</Table.Td>
+              {/* <Table.Td style={{ width: rem(80) }}>{item.id}</Table.Td> */}
               
               <Table.Td>{item.edit === 0 ? item.content : 
                 <TextInput autoFocus value={item.content} onChange={(e) => handlers.setItemProp(index, 'content', e.target.value)}/>
@@ -248,7 +250,7 @@ const FormQuestion = ({initial}) => {
                         value={initial.partId}
                     />
                 </>) : null}
-                <div><Button mt="md" onClick={handleSubmit}>Submit</Button></div>
+                
                 </Stack>
             </Grid.Col>
             <Grid.Col span={7}>
@@ -258,7 +260,7 @@ const FormQuestion = ({initial}) => {
                     <Table.Thead>
                         <Table.Tr>
                         <Table.Th style={{ width: rem(40) }} />
-                        <Table.Th style={{ width: rem(40) }}>ID</Table.Th>
+                        {/* <Table.Th style={{ width: rem(40) }}>ID</Table.Th> */}
                         <Table.Th>Content</Table.Th>
                         <Table.Th>Note</Table.Th>
                         <Table.Th style={{ width: rem(120) }}>Correct</Table.Th>
@@ -273,7 +275,7 @@ const FormQuestion = ({initial}) => {
                         </Table.Tbody>
                         )}
                     </Droppable>
-                    <Table.Caption><Button 
+                    <Table.Caption style={{textAlign: "right"}}><Button 
                         disabled={addItem}
                         leftSection={<IconPlus size={14} />} 
                         onClick={() => {
@@ -283,6 +285,7 @@ const FormQuestion = ({initial}) => {
                     </Table>
                 </DragDropContext>
             </Grid.Col>
+            <Grid.Col span={12}><div><Button mt="md" onClick={handleSubmit}>Save</Button></div></Grid.Col>
         </Grid>
     </> );
 }
